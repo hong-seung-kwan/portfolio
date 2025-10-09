@@ -18,14 +18,14 @@ const Home = () => {
     }
 
     return (
-        <div className="bg-white min-h-screen text-black px-4 sm:px-8">
-            {/* ====================== PROFILE 섹션 ====================== */}
-            <section className="relative bg-white text-gray-900 pt-28 pb-32 overflow-hidden">
-                <div className="max-w-6xl mx-auto flex flex-row flex-wrap justify-center md:justify-between items-center gap-16 lg:gap-24 relative">
+        <div className="bg-white min-h-screen text-black px-8">
+            {/*PROFILE 섹션 */}
+            <section className="relative bg-white text-gray-900 pt-32 pb-44 overflow-hidden">
+                <div className="max-w-6xl mx-auto pl-8 flex flex-col md:flex-row items-center gap-16 md:gap-24 relative">
 
                     {/* 왼쪽: PROFILE 타이틀 + 사진 */}
-                    <div className="flex flex-col items-center md:items-start text-center md:text-left shrink-0">
-                        <h1 className="font-blackHan text-[45px] sm:text-[60px] lg:text-[80px] tracking-wide mb-6 text-center md:text-left">
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                        <h1 className="font-blackHan text-[60px] tracking-wide mb-8 md:mb-0 self-start md:-ml-8">
                             PROFILE
                         </h1>
 
@@ -33,25 +33,19 @@ const Home = () => {
                             <img
                                 src="/images/profile.jpg"
                                 alt="홍승관 프로필"
-                                className="w-56 h-64 sm:w-72 sm:h-80 lg:w-80 lg:h-96 object-cover rounded-sm shadow-lg"
+                                className="w-64 h-72 md:w-80 md:h-93 object-cover rounded-sm shadow-lg"
                             />
                         </div>
                     </div>
 
                     {/* 오른쪽: 정보 영역 */}
-                    <div className="flex-1 text-center md:text-left min-w-[280px] max-w-[520px]">
-                        <h2 className="text-[28px] sm:text-[34px] lg:text-[37px] font-black mb-2">
-                            홍승관{" "}
-                            <span className="text-gray-500 text-[22px] sm:text-[25px] lg:text-[27px] font-medium ml-2">
-                                HONG SEUNGKWAN
-                            </span>
+                    <div className="flex-1 text-center md:text-left mt-">
+                        <h2 className="text-[34px] md:text-[37px] font-black mb-1">
+                            홍승관 <span className="text-gray-500 text-[25px] md:text-[27px] font-medium ml-2">HONG SEUNGKWAN</span>
                         </h2>
+                        <p className="text-gray-700 font-medium mb-6 text-[24px] md:text-[27px]">Web Front-End Developer</p>
 
-                        <p className="text-gray-700 font-medium mb-6 text-[20px] sm:text-[24px] lg:text-[27px]">
-                            Web Front-End Developer
-                        </p>
-
-                        <div className="space-y-3 text-[18px] sm:text-[20px] lg:text-[22px] text-gray-700">
+                        <div className="space-y-3 text-[20px] md:text-[25px] text-gray-700">
                             <p className="flex items-center justify-center md:justify-start gap-2">
                                 📧 <span>seungkwan8164@gmail.com</span>
                             </p>
@@ -72,68 +66,65 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* ====================== ABOUT ME 섹션 ====================== */}
-            <section className="bg-white text-gray-900 pt-20 pb-32 px-4 sm:px-6">
+            {/* ABOUT ME 섹션 */}
+            <section className="bg-white text-gray-900 pt-16 pb-32 px-6">
                 <div className="max-w-6xl mx-auto text-left">
-                    <h2 className="font-blackHan text-[45px] sm:text-[60px] lg:text-[80px] mb-12 tracking-wide">
-                        ABOUT ME
+                    <h2 className="font-blackHan text-[60px] mb-12 text-gray-900 tracking-tight">
+                        저는 이런 사람이에요.
                     </h2>
 
-                    <div className="max-w-4xl text-[18px] sm:text-[20px] lg:text-[22px] leading-relaxed text-gray-700 tracking-tight">
-                        <p className="mb-4">
-                            누구나 쉽게 이해할 수 있는 <strong>가독성 높은 코드</strong>를 작성하기 위해 고민합니다.
-                        </p>
-                        <p className="mb-4">
-                            협업 과정에서 팀원들과의 <strong>소통</strong>을 중요하게 생각합니다.
-                        </p>
-                        <p className="mb-4">
-                            <strong>코드 리뷰</strong>와 <strong>피드백</strong>을 통해 성장하는 것을 즐기고,
-                            더 나은 방향이 있는지 적극적으로 <strong>피드백</strong>을 구합니다.
-                        </p>
-                        <p className="mb-4">
-                            <strong>사용자 경험</strong>을 고려하여 개발하려고 노력합니다.
-                        </p>
-                        <p>
-                            혼자서도 학습을 하지만 <strong>함께</strong>할 때 더 큰 성장을 할 수 있다고 생각합니다.
-                        </p>
+                    <div className="max-w-4xl mx-auto text-[20px] leading-relaxed text-gray-700">
+
+                        누구나 쉽게 이해할 수 있는 <strong>가독성 높은 코드</strong>를 작성하기 위해 고민합니다.
+                        <br />
+                        협업 과정에서 팀원들과의 <strong>소통</strong>을 중요하게 생각합니다.
+                        <br />
+                        <strong>코드 리뷰</strong>와 <strong>피드백</strong>을 통해 성장하는 것을 즐기고,
+                        <br />
+                        더 나은 방향이 있는지 적극적으로 <strong>피드백</strong>을 구합니다.
+                        <br />
+                        <strong>사용자 경험</strong>을 고려하여 개발하려고 노력합니다.
+                        <br />
+                        혼자서도 학습을 하지만 <strong>함께</strong>할 때 더 큰 성장을 할 수 있다고 생각합니다.
+
                     </div>
                 </div>
             </section>
 
-            {/* ====================== PROJECTS 섹션 ====================== */}
-            <section className="bg-white text-gray-900 pt-20 pb-32 px-4 sm:px-6">
+            {/* 📂 PROJECTS 섹션 */}
+            <section className="bg-white text-gray-900 pt-16 pb-32 px-6">
                 <div className="max-w-6xl mx-auto text-left">
-                    <h2 className="font-blackHan text-[45px] sm:text-[60px] lg:text-[80px] mb-16 tracking-wide">
+                    <h2 className="font-blackHan text-[60px] font-bold mb-16 tracking-wide">
                         PROJECTS
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
                         {Projects.map((p) => (
                             <div
                                 key={p.id}
-                                className="group bg-white border border-gray-200 rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-xl transition-all duration-300"
+                                className="group bg-white border border-gray-200 rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300"
                             >
-                                {/* 🔹 카테고리 + 기간 */}
-                                <div className="mb-4">
-                                    <span className="inline-block text-sm font-semibold bg-red-500 text-white px-3 py-1 rounded-full w-fit mb-1">
+                                {/* 상단 카테고리 + 기간 */}
+                                <div className="mb-4 flex flex-col gap-1">
+                                    <span className="inline-block text-sm font-semibold bg-red-500 text-white px-3 py-1 rounded-full w-fit">
                                         {p.category}
                                     </span>
                                     <p className="text-sm text-gray-500">{p.period}</p>
                                 </div>
 
-                                {/* 🔸 제목 */}
-                                <h3 className="text-[18px] sm:text-[20px] font-extrabold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                {/* 프로젝트 제목 */}
+                                <h3 className="text-[20px] font-extrabold text-gray-900 mb-3 transition-colors">
                                     {p.title}
                                 </h3>
 
-                                {/* 📋 설명 */}
-                                <ul className="text-gray-700 text-[14px] sm:text-[15px] leading-relaxed space-y-2 mb-5 list-disc list-inside">
+                                {/* 설명 리스트 */}
+                                <ul className="text-gray-700 text-[15px] leading-relaxed space-y-2 mb-5 list-disc list-inside">
                                     {p.descList?.map((line, i) => (
                                         <li key={i}>{line}</li>
                                     ))}
                                 </ul>
 
-                                {/* 🧠 기술스택 */}
+                                {/* 기술 스택 */}
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {p.tech.map((t, idx) => (
                                         <span
@@ -145,7 +136,7 @@ const Home = () => {
                                     ))}
                                 </div>
 
-                                {/* 📄 버튼 */}
+                                {/* 버튼 영역 */}
                                 <div className="flex gap-3">
                                     <button
                                         onClick={() => setSelectedProject(p)}
@@ -156,10 +147,7 @@ const Home = () => {
 
                                     {p.images && (
                                         <button
-                                            onClick={() => {
-                                                setSelectedImages(p.images);
-                                                setCurrentIndex(0);
-                                            }}
+                                            onClick={() => { setSelectedImages(p.images); setCurrentIndex(0); }}
                                             className="flex items-center gap-2 border border-gray-300 text-sm font-semibold rounded-md px-3 py-1.5 hover:bg-gray-100 transition"
                                         >
                                             🖼 이미지
@@ -173,7 +161,7 @@ const Home = () => {
             </section>
 
 
-            {/* 📘 README 모달 */}
+            {/* README 모달 */}
             {selectedProject && (
                 <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 px-4">
                     <div className="bg-white text-black rounded-2xl shadow-xl w-full max-w-3xl relative flex flex-col">
@@ -210,7 +198,7 @@ const Home = () => {
                 </div>
             )}
 
-            {/* 🖼 이미지 모달 */}
+            {/* 이미지 모달 */}
             {selectedImages && (
                 <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50">
                     <div className="relative bg-white rounded-xl shadow-lg p-6 flex flex-col items-center w-full max-w-6xl">
