@@ -3,6 +3,7 @@ import { Projects } from '../data/Projects'
 import ProjectModal from '../components/ProjectModal'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm';
+import Navbar from './Navbar';
 
 const Home = () => {
     const [selectedProject, setSelectedProject] = useState(null)
@@ -19,6 +20,7 @@ const Home = () => {
 
     return (
         <div className="bg-white min-h-screen text-black px-8">
+            <Navbar/>
             {/*PROFILE 섹션 */}
             <section className="relative bg-white text-gray-900 pt-32 pb-44 overflow-hidden">
                 <div className="max-w-6xl mx-auto pl-8 flex flex-col md:flex-row items-center gap-16 md:gap-24 relative">
@@ -39,7 +41,7 @@ const Home = () => {
                     </div>
 
                     {/* 오른쪽: 정보 영역 */}
-                    <div className="flex-1 text-center md:text-left mt-">
+                    <div className="flex-1 text-center md:text-left mt-10">
                         <h2 className="text-[34px] md:text-[37px] font-black mb-1">
                             홍승관 <span className="text-gray-500 text-[25px] md:text-[27px] font-medium ml-2">HONG SEUNGKWAN</span>
                         </h2>
@@ -67,13 +69,13 @@ const Home = () => {
             </section>
 
             {/* ABOUT ME 섹션 */}
-            <section className="bg-white text-gray-900 pt-16 pb-32 px-6">
+            <section id='about' className="bg-white text-gray-900 pt-16 pb-32 px-6">
                 <div className="max-w-6xl mx-auto text-left">
                     <h2 className="font-blackHan text-[60px] mb-12 text-gray-900 tracking-tight">
                         저는 이런 사람이에요.
                     </h2>
 
-                    <div className="max-w-4xl mx-auto text-[20px] leading-relaxed text-gray-700">
+                    <div className="mx-auto text-[20px] leading-relaxed text-gray-700">
 
                         누구나 쉽게 이해할 수 있는 <strong>가독성 높은 코드</strong>를 작성하기 위해 고민합니다.
                         <br />
@@ -92,7 +94,7 @@ const Home = () => {
             </section>
 
             {/* 📂 PROJECTS 섹션 */}
-            <section className="bg-white text-gray-900 pt-16 pb-32 px-6">
+            <section id='projects' className="bg-white text-gray-900 pt-16 pb-32 px-6">
                 <div className="max-w-6xl mx-auto text-left">
                     <h2 className="font-blackHan text-[60px] font-bold mb-16 tracking-wide">
                         PROJECTS

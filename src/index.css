@@ -5,3 +5,6 @@
   /* 폰트 변수 정의 */
   --font-blackHan: "Black Han Sans", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
