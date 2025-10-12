@@ -27,7 +27,7 @@ const Home = () => {
 
                     {/* 왼쪽: PROFILE 타이틀 + 사진 */}
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                        <h1 className="font-blackHan text-[60px] tracking-wide mb-8 md:mb-0 self-start md:-ml-8">
+                        <h1 className="font-blackHan text-[60px] tracking-wide mb-8 md:mb-10 self-start md:-ml-8">
                             PROFILE
                         </h1>
 
