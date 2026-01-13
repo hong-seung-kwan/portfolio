@@ -20,7 +20,7 @@ const Home = () => {
 
     return (
         <div className="bg-white min-h-screen text-black px-8">
-            <Navbar/>
+            <Navbar />
             {/*PROFILE 섹션 */}
             <section className="relative bg-white text-gray-900 pt-32 pb-44 overflow-hidden">
                 <div className="max-w-6xl mx-auto pl-8 flex flex-col md:flex-row items-center gap-16 md:gap-24 relative">
@@ -147,13 +147,24 @@ const Home = () => {
                                         📄 README
                                     </button>
 
-                                    {p.images && (
-                                        <button
-                                            onClick={() => { setSelectedImages(p.images); setCurrentIndex(0); }}
-                                            className="flex items-center gap-2 border border-gray-300 text-sm font-semibold rounded-md px-3 py-1.5 hover:bg-gray-100 transition"
+                                    {p.deployUrl ? (
+                                        <a
+                                            href={p.deployUrl}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                            className='flex items-center gap-2 border border-gray-300 text-sm font-semibold rounded-md px-3 py-1.5 hover:bg-gray-100 transition'
                                         >
-                                            🖼 이미지
-                                        </button>
+                                            🔗 배포 링크
+                                        </a>
+                                    ) : (
+                                        p.images && (
+                                            <button
+                                                onClick={() => { setSelectedImages(p.images); setCurrentIndex(0); }}
+                                                className="flex items-center gap-2 border border-gray-300 text-sm font-semibold rounded-md px-3 py-1.5 hover:bg-gray-100 transition"
+                                            >
+                                                🖼 이미지
+                                            </button>
+                                        )
                                     )}
                                 </div>
                             </div>

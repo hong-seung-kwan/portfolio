@@ -1,6 +1,76 @@
 export const Projects = [
     {
         id: 1,
+        category: "Project Diary - 개인 프로젝트",
+        title: "개인 프로젝트 기록 및 회고 웹",
+        descList: [
+            "React + Firebase 기반으로 개인 프로젝트와 개발 일지 기록 및 관리하는 웹 서비스",
+            "Firebase Authentication을 활용한 이메일 로그인/회원가입 및 테스트 계정 체험 기능 제공",
+            "Firestore 데이터 모델링을 통해 프로젝트 / 일지 / 회고/ 트러블슈팅 구조화",
+            "FullCalendar + Lazy Loading을 적용해 일정 기반 프로젝트 기록을 시각적으로 관리",
+            "Firebase Hosting을 이용한 SPA 배포 및 운영 환경 구성"
+        ],
+        period: "2025.11 ~ 2025.12",
+        tech: ["React", "TypeScript", "Firebase Authentication", "Firestore", "Firebase Hosting", "Vite"],
+        deployUrl: "https://projectdiary-1ef71.web.app/",
+
+        readme: `
+### 😺 Github  
+https://github.com/hong-seung-kwan/ProjectDiary
+
+
+
+### 🧠 소개  
+- 개인 프로젝트를 기록 및 관리하기 위한 프로젝트 일지 웹 서비스
+- Firebase Authentication으로 사용자 인증 및 개인 데이터 분리
+- React 기반 SPA 구조로 일지 작성, 수정, 삭제 및 조회 기능
+- Firestore를 이용한 프로젝트 일지 데이터 실시간 저장 및 동기화
+
+
+
+### 🧩 개인 기여  
+- 프로젝트 & 일지 관리: 프로젝트 단위로 일지를 관리할 수 있도록 설계
+- 캘린더 기반 UI: 일지를 캘린더 이벤트로 변환하여 날짜별 시각화 및 프로젝트 선택 시 캘린더 이벤트 필터링
+- 통계: 전체 일지 수, 트러블 슈팅 횟수, 진행 중 프로젝트 수 집계
+- 인증: Firebase Authentication 기반 이메일 로그인 / 회원가입 구현
+- 배포: Firebase Hosting을 이용한 배포  
+
+
+
+### 🚀 성과  
+- React + Firebase 기반 웹 설계 및 구현 경험
+- Firestore 실시간 데이터 구조와 비동기 처리 흐름 이해
+- Fullcalendar와 같은 라이브리러 성능에 미치는 영향 분석 경험
+- Lighthouse를 활용한 웹 성능 측정 및 개선 시도 경험
+
+
+### 🧰 트러블 슈팅  
+
+**1. FullCalendar 도입 후 성능 점수 저하 문제**  
+- 문제: FullCalendar를 메인 페이지에 바로 렌더링하면서 Lighthouse 측정 결과 LCP가 4초 이상으로 측정됨
+- 원인: FullCalendar는 내부적으로 많은 DOM과 스타일을 렌더링하는 무거운 라이브러리이자 가장 큰 요소가 캘린더로 잡히며 초기 JS 파싱 + 렌더링 비용 한 번에 발생
+- 해결: React.lazy + Suspense를 사용해 초기 화면에는 통계 카드 및 요약 UI 먼저 렌더링 후 캘린더는 지연 로딩
+- 배운 점: Lighthouse 점수 자체는 크게 오르지 않았지만 LCP 원인과 한계를 이해하는 경험을 얻음
+
+**2. 다중 프로젝트 일지 조회 시 느린 로딩**  
+- 문제: 사용자 프로젝트 수가 늘어날수록 각 프로젝트 일지를 순차적으로 조회하면서 로딩이 길어짐
+- 원인: for 루프 내부에서 awiat getDocs()를 사용해 순차 요청이 발생함 
+- 해결: Promise.all을 활용해 모든 프로젝트의 일지 컬렉션을 병렬 요청  
+- 배운 점: 비동기 병렬 처리 패턴에 대하여 학습
+
+**3. 페이지 이동 후 통계 데이터가 0으로 초기화되는 문제**
+- 문제: 홈 페이지 최초 진입 시 통계 데이터는 정상 표시되나 다른 페이지 이동 후 다시 돌아오면 통계 데이터가 0으로 표시됨
+- 원인: 통계데이터가 useEffect의 조건에 의존하면서, 페이지 재마운트 시 데이터 fetch 타이밍이 어긋나 상태 초기화되는 문제가 발생
+- 해결: 데이터 fetch 로직과 UI 준비 상태를 분리해 통계 계산과 상태 초기화 흐름 안정화
+- 배운 점: React 생명주기와 상태 흐름에 대한 이해도 향상
+
+### ⚙️ 기술 스택  
+React, TypeScript, Vite, Firebase, Firestore, Firebase Authentication, Firebase Hosting
+`
+    },
+
+    {
+        id: 2,
         category: "Scheduly - 팀 프로젝트",
         title: "개인 학습 플래너 웹 사이트",
         descList: [
@@ -90,7 +160,7 @@ React, JavaScript, Java, HTML, CSS, MariaDB, SpringBoot
 
 
     {
-        id: 2,
+        id: 3,
         category: "Wardrobe - 개인 프로젝트",
         title: "쇼핑몰 웹 사이트",
         descList: [
@@ -165,7 +235,7 @@ JavaScript, Java, HTML, CSS, MariaDB, Spring Data JPA, Spring tools Suite 4
     },
 
     {
-        id: 3,
+        id: 4,
         category: "Flirt - 팀 프로젝트",
         title: "대학생 익명 투표 SNS 플랫폼",
         descList: [
@@ -177,20 +247,20 @@ JavaScript, Java, HTML, CSS, MariaDB, Spring Data JPA, Spring tools Suite 4
         period: "2024.03.26 ~ 2024.06.05",
         tech: ["Dart", "Firebase", "Firebase Authentication", "Flutter", "Android Studio"],
         img: "/images/Flirt.png",
-        images:[
-             "/images/Flirt/회원가입.png",
-             "/images/Flirt/익명투표.png",
-             "/images/Flirt/투표끝.png",
-             "/images/Flirt/내가 받은 카드.png",
-             "/images/Flirt/내가 받은 투표.png",
-             "/images/Flirt/내가 받은 투표 누가 했는지.png",
-             "/images/Flirt/초성힌트.png",
-             "/images/Flirt/채팅하기 누를 때.png",
-             "/images/Flirt/랭킹.png",
-             "/images/Flirt/익명채팅.png",
-             "/images/Flirt/게시물투표.png",
-             "/images/Flirt/게시물 투표 생성.png",
-             "/images/Flirt/인기 폴스.png",
+        images: [
+            "/images/Flirt/회원가입.png",
+            "/images/Flirt/익명투표.png",
+            "/images/Flirt/투표끝.png",
+            "/images/Flirt/내가 받은 카드.png",
+            "/images/Flirt/내가 받은 투표.png",
+            "/images/Flirt/내가 받은 투표 누가 했는지.png",
+            "/images/Flirt/초성힌트.png",
+            "/images/Flirt/채팅하기 누를 때.png",
+            "/images/Flirt/랭킹.png",
+            "/images/Flirt/익명채팅.png",
+            "/images/Flirt/게시물투표.png",
+            "/images/Flirt/게시물 투표 생성.png",
+            "/images/Flirt/인기 폴스.png",
         ],
 
         readme: `
@@ -224,6 +294,8 @@ https://github.com/hong-seung-kwan/Flirt
 ### ⚙️ 기술 스택  
 Android Studio, Flutter, Dart, Firebase, FFirebase Authentication
 `
-    }
+    },
+
+
 
 ]
